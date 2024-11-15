@@ -2,20 +2,18 @@
 class Solution:
     def getSecondLargest(self, arr):
         
-        arr.sort()
-        m=0
-        for i in range(len(arr)):
-            m=max(arr[i],m)
+        c=max(arr)
+        m=-1
+        for i in arr:
+            if i!=c and i>m:
+                m=i
         
-        min=0
-        for i in range(len(arr)):
-            if arr[i]<m:
-                min=arr[i]
         
-        if not min:
+        
+        if m<0:
             return "-1"
-        else:
-            return min
+        
+        return m
             
 
 
@@ -30,5 +28,5 @@ if __name__ == "__main__":
         ob = Solution()
         ans = ob.getSecondLargest(arr)
         print(ans)
-
+        print("~")
 # } Driver Code Ends
