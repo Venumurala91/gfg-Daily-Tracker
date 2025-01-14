@@ -2,24 +2,23 @@
 
 class Solution:
     #Function to find equilibrium point in the array.
-    def equilibriumPoint(self,arr):
+    def findEquilibrium(self, arr):
         # code here
-        
-        n = len(arr)
-        left = 0
-        pivot = 0
-        right = sum(arr[1:])  # Calculate the right sum excluding the first element
-    
-        # Iterate pivot over all the elements of the array until left != right
-        while pivot < n - 1 and right != left:
-            pivot += 1
-            right -= arr[pivot]
-            left += arr[pivot - 1]
-    
-        # If left == right, return pivot as the equilibrium index
-        return pivot + 1 if left == right else -1
+        lp,rp=[0]*len(arr),[0]*len(arr)
+        ls=rs=0
+        for i in range(len(arr)):
+            ls+=arr[i]
+            rs+=arr[len(arr)-1-i]
+            lp[i]=ls
+            rp[len(arr)-1-i]=rs
+        for i in range(len(arr)):
+            if lp[i]==rp[i]:
+                return i
+        return -1
 
-       
+
+
+
 #{ 
  # Driver Code Starts
 #Initial Template for Python 3
@@ -34,7 +33,7 @@ def main():
 
         ob = Solution()
 
-        print(ob.equilibriumPoint(arr))
+        print(ob.findEquilibrium(arr))
         print("~")
         T -= 1
 
