@@ -1,20 +1,20 @@
 #User function Template for python3
 '''
-	Your task is to check if given linkedlist
-	is a pallindrome or not.
-	
-	Function Arguments: head (reference to head of the linked list)
-	Return Type: boolean , no need to print just return True or False.
+    Your task is to check if given linkedlist
+    is a pallindrome or not.
+    
+    Function Arguments: head (reference to head of the linked list)
+    Return Type: boolean , no need to print just return True or False.
 
-	{
-		# Node Class
-		class Node:
-		    def __init__(self, data):   # data -> value stored in node
-		        self.data = data
-		        self.next = None
-	}
+    {
+        # Node Class
+        class Node:
+            def __init__(self, data):   # data -> value stored in node
+                self.data = data
+                self.next = None
+    }
 
-	Contributed By: Nagendra Jha
+    Contributed By: Nagendra Jha
 '''
 #Function to check whether the list is palindrome.
 class Solution:
@@ -32,6 +32,9 @@ class Solution:
             return True
         
         return False 
+
+
+
 
 
 #{ 
