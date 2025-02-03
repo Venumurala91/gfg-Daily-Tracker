@@ -6,6 +6,9 @@ class Solution:
         return s[::-1]
 
 
+
+
+
 #{ 
  # Driver Code Starts
 #Initial Template for Python 3
@@ -17,5 +20,7 @@ if __name__ == "__main__":
         ob = Solution()
         print(ob.reverseString(s))
         t = t - 1
+
+        print("~")
 
 # } Driver Code Ends
