@@ -1,67 +1,41 @@
+#User function Template for python3
+class Solution:
+    def subarraySum(self, arr, target):
+        # code here
+        if arr[0] == target:
+            return [1, 1]
+        l = 0
+        n = len(arr)
+        s = arr[0]
+        for r in range(1, n):
+            s += arr[r]
+            if s == target:
+                return [l + 1, r + 1]
+            elif s > target:
+                while s > target:
+                    s -= arr[l]
+                    l += 1
+                if s == target:
+                    return [l + 1, r + 1]
+        return [-1]
+
+
+
+
+
 #{ 
  # Driver Code Starts
-#Initial Template for Python 3
+# Initial Template for Python 3
 
-# } Driver Code Ends
-#User function Template for python3
+if __name__ == '__main__':
+    tc = int(input().strip())
+    while tc > 0:
+        arr = list(map(int, input().strip().split()))
+        d = int(input().strip())
+        ob = Solution()
+        result = ob.subarraySum(arr, d)
+        print(" ".join(map(str, result)))
+        tc -= 1
+        print("~")
 
-
-#Function to find a continuous sub-array which adds up to a given number.
-class Solution:
-    def subArraySum(self,arr, n, s): 
-       #Write your code here
-        # arr.sort()
-        temp=arr[0]
-        l=0
-        r=-1
-        ans=[]
-        if(temp==s):
-            ans.extend([l+1,r+2])
-            return ans
-        for i in range(1,n):
-            temp+=arr[i]
-            while temp>s and l<i:
-                temp-=arr[l]
-                l+=1
-            if(temp==s):
-                r=i
-                break
-        if r==-1:
-            ans.append(-1)
-            return ans
-        ans.extend([l+1,r+1])
-        return ans
-
-            
-
-             
-
-#{ 
- # Driver Code Starts.
-#Initial Template for Python 3
-
-import math
-
-def main():
-        T=int(input())
-        while(T>0):
-            
-            NS=input().strip().split()
-            N=int(NS[0])
-            S=int(NS[1])
-            
-            A=list(map(int,input().split()))
-            ob=Solution()
-            ans=ob.subArraySum(A, N, S)
-            
-            for i in ans:
-                print(i, end=" ")
-                
-            print()
-            
-            T-=1
-
-
-if __name__ == "__main__":
-    main()
 # } Driver Code Ends
