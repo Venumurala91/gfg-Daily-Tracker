@@ -1,20 +1,22 @@
 #User function Template for python3
 class Solution:
-    def getSecondLargest(self, arr):
+    def getSecondLargest(self, a):
         # Code Here
-        c=max(arr)
-        m=-1
-        for i in arr:
-            if i!=c and i>m:
-                m=i
+        c=max(a)
+        m=0
+        for i in range(len(a)):
+            if a[i]>m and a[i]!=c:
+                m=a[i]
+                
         
         
-        
-        if m<0:
+        if m==0:
             return "-1"
+            
         
         return m
-            
+                
+        
 
 
 #{ 
